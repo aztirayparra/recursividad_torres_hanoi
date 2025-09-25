@@ -1,10 +1,14 @@
+contador=0
 def hanoi(n_discos,t_inicial,t_auxiliar,t_final):
+    global contador
 
     if n_discos==1:
-        print(f"movimiento disco 1 de Torre {t_inicial} a Torre {t_final}")
+        contador+=1
+        print(f"movimiento {contador}: disco 1 de Torre {t_inicial} a Torre {t_final}")
     else:
         hanoi(n_discos-1,t_inicial,t_final,t_auxiliar)
-        print(f"movimiento disco {n_discos} de Torre {t_inicial} a Torre {t_final}")
+        contador += 1
+        print(f"movimiento {contador}: disco {n_discos} de Torre {t_inicial} a Torre {t_final}")
         hanoi(n_discos-1,t_auxiliar,t_inicial,t_final)
     
 
