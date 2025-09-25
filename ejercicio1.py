@@ -9,10 +9,17 @@ def hanoi(n_discos,t_inicial,t_auxiliar,t_final):
 
 def n_movimientos(discos):
     return (2**discos)-1
-
-discos=int(input("Ingrese el número de discos:"))
-
-hanoi(discos,"A","B","C")
-print(f"El numero de discos es:{n_movimientos(discos)}")
+while True:
+    try:
+        discos=int(input("Ingrese el número de discos:"))
+        torrei=input("ingrese el nombre de la torre inicial: ") or "A"
+        torreaux=input("ingrese el nombre de la torre auxiliar: ") or "B"
+        torref=input("ingrese el nombre de la torre final: ") or"c"
+        break
+    except ValueError:
+        print("Se debe ingresar los datos correctamente")
+ 
+hanoi(discos,torrei,torreaux,torref)
+print(f"El numero de movimientos es:{n_movimientos(discos)}")
 
 
